@@ -63,22 +63,23 @@ type GuildApplicationCommandPermissions struct {
 }
 
 type ApplicationCommand struct {
-	ID                Snowflake                   `json:"id"`
-	Type              ApplicationCommandType      `json:"type"`
-	ApplicationID     Snowflake                   `json:"application_id"`
-	GuildID           Snowflake                   `json:"guild_id"`
-	Name              string                      `json:"name"`
-	Description       string                      `json:"description"`
-	Options           []*ApplicationCommandOption `json:"options"`
-	DefaultPermission bool                        `json:"default_permission,omitempty"`
+	ID                       Snowflake                   `json:"id"`
+	Type                     ApplicationCommandType      `json:"type"`
+	ApplicationID            Snowflake                   `json:"application_id"`
+	GuildID                  Snowflake                   `json:"guild_id"`
+	Name                     string                      `json:"name"`
+	Description              string                      `json:"description"`
+	Options                  []*ApplicationCommandOption `json:"options"`
+	DefaultMemberPermissions PermissionBit               `json:"default_member_permissions,omitempty"`
+	DefaultPermission        bool                        `json:"default_permission,omitempty"`
 }
 
 type CreateApplicationCommand struct {
-	Name              string                      `json:"name"`
-	Description       string                      `json:"description"`
-	Type              ApplicationCommandType      `json:"type,omitempty"`
-	Options           []*ApplicationCommandOption `json:"options,omitempty"`
-	DefaultPermission bool                        `json:"default_permission,omitempty"`
+	Name                     string                      `json:"name"`
+	Description              string                      `json:"description"`
+	Type                     ApplicationCommandType      `json:"type,omitempty"`
+	Options                  []*ApplicationCommandOption `json:"options,omitempty"`
+	DefaultMemberPermissions PermissionBit               `json:"default_member_permissions,omitempty"`
 }
 
 type UpdateApplicationCommand struct {
